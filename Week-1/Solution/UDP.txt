@@ -1,0 +1,32 @@
+
+============================================Exercise # 2 Tracing UDP withWireshark=================================
+
+--------------------------Answer the following questions using udp-wireshark-trace file:---------------------------
+
+1. Select one UDP packet from your trace. From this packet, determine how many fields there are in the UDP header. (You shouldn’t look in the textbook! Answer these questions directly from what you observe in the packet trace.) Name these fields.
+A.1.)User Datagram Protocol : 4 fields
+	Src Port: 4372 
+	Destination port:53
+	Length: 51
+	Checksum: 0x77d4 
+	
+2. By consulting the displayed information in Wireshark’s packet content field for this packet,determine the length (in bytes) of each of the UDP header fields.
+A.2.) 8 bytes
+
+3. The value in the Length field is the length of what? (You can consult the text for thisanswer). Verify your claim with your captured UDP packet.
+A.3.)Total Length of the packet is given by the length field in UDPp header format.
+
+4. What is the maximum number of bytes that can be included in a UDP payload? (Hint: the answer to this question can be determined by your answer to 2. above)
+A.4.)65,527 bytes can be maximum included in a UDP payload(65,535-8=35,527).Header length= 8 Bytes and Total Length= 65,535 Bytes  
+ 
+5. What is the largest possible source port number? (Hint: see the hint in 4.)
+A.5.)16 bits
+
+6. What is the protocol number for UDP? Give your answer in both hexadecimal and decimal notation. To answer this question, you’ll need to look into the Protocol field of the IP datagram containing this UDP segment (see Figure 4.13 in the text, and the discussion of IP header fields).
+A.6.)The protocol number for UDP is 17 (decimal) and 0X011 (Hexadecimal)
+
+
+7. Examine a pair of UDP packets in which your host sends the first UDP packet and the second UDP packet is a reply to this first UDP packet. (Hint: for a second packet to be sent in response to a first packet, the sender of the first packet should be the destination of the second packet). Describe the relationship between the port numbers in the two packets.
+A.7.)For first UDP packet : Source Port = 4372 and Destination Port= 53
+     For second UDP packet which is reply for first packet : Source Port= 53 and Destination Port= 4372  
+     
