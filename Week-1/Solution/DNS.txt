@@ -1,1 +1,88 @@
 
+=====================================Exercise # 1 Tracing DNS with Wireshark=======================================
+
+
+
+-------------------------Q1. Answer the following questions using dns-ethereal-trace-1file:------------------------
+
+A.1 a.)Locate the DNS query and response messages. Are then sent over UDP or TCP?
+A.a.)UDP
+
+b.)What is the destination port for the DNS query message? What is the source port of DNS response message?
+A.b.)Destination port: 53
+     Source port:53
+
+c.)To what IP address is the DNS query message sent? Use ipconfig to determine the IP address of your local DNS server. Are these two IP addresses the same?     
+A.c.)IP address=128.238.38.23 and local DNS server=172.31.100.14,172.31.102.14. No they are not same.  
+     
+d.)Examine the DNS query message. What “Type” of DNS query is it? Does the query message contain any “answers”?     
+A.d.)type=www.ietf.org: type A, class IN. No it does not contain any asnswer.
+
+e.) Examine the DNS response message. How many “answers” are provided? What does each of these answers contain?
+A.e.)Answers=2 (www.ietf.org: type A, class IN, addr 132.151.6.75 and www.ietf.org: type A, class IN, addr 65.246.255.51)
+
+f.) Consider the subsequent TCP SYN packet sent by your host. Does the destination IP address of the SYN packet correspond to any of the IP addresses provided in the DNS response message?
+A.f.)No.destination IP address of the SYN packet =132.151.6.75 and IP address provided in DNS response message = 128.238.38.160  
+
+g.) This web page contains images. Before retrieving each image, does your host issue new DNS queries?
+A.g.)NO
+
+----------------------Q2. Answer the following questions using dns-ethereal-trace-2 file:--------------------------
+
+h.)What is the destination port for the DNS query message? What is the source port of DNS response message?
+A.h.)Source Port=3740,3741,3742
+     Destination Port=53
+    
+i.) To what IP address is the DNS query message sent? Is this the IP address of your default local DNS server?
+A.i.)IP address=128.238.38.160 the DNS query message sent.No same
+
+j.) Examine the DNS query message. What “Type” of DNS query is it? Does the query message contain any “answers”?
+A.j.)22.29.238.128.in-addr.arpa: type PTR, class IN. The query message does not contain any “answers”. 
+     www.mit.edu.poly.edu: type A, class IN. The query message does not contain any “answers”
+     www.mit.edu: type A, class IN. The query message does not contain any “answers”
+
+k.) Examine the DNS response message. How many “answers” are provided? What does each of these answers contain?
+A.k.)1 answer provided = 22.29.238.128.in-addr.arpa: type PTR, class IN, dns-prime.poly.edu
+     1 answer provided = www.mit.edu: type A, class IN, addr 18.7.22.83
+
+
+l.) Provide a screenshot.
+A.l.)NOT to attempt
+
+----------------------Q3. Answer the following questions using dns-ethereal-trace-3 file:------------------------
+
+m.) To what IP address is the DNS query message sent? Is this the IP address of your default local DNS server?
+A.m.)IP address=128.238.29.22 the DNS query message sent. NO the ip address of default local DNS server is 172.31.100.14,172.31.102.14
+
+n.) Examine the DNS query message. What “Type” of DNS query is it? Does the query message contain any “answers”?
+A.n.)DNS query message = 22.29.238.128.in-addr.arpa: type PTR, class IN; Answer = 0
+     DNS query message = mit.edu.poly.edu: type NS, class IN;  Answer = 0
+     DNS query message = mit.edu: type NS, class IN;  Answers = 0
+
+o.) Examine the DNS response message. What MIT nameservers does the response message provide? Does this response message also provide the IP addresses of the MIT nameservers?
+A.o.)MIT nameservers= mit.edu: type NS, class IN, ns bitsy.mit.edu  IP address = 18.72.0.3 
+					  mit.edu: type NS, class IN, ns strawb.mit.edu IP address = 18.71.0.151
+					  mit.edu: type NS, class IN, ns w20ns.mit.edu  IP address = 18.70.0.160
+				  
+
+p.) Provide a screenshot.
+A.p.)NOT to attempt
+
+------------------------Q4. Answer the following questions using dns-ethereal-trace-4 file:-----------------------
+
+Q.) To what IP address is the DNS query message sent? Is this the IP address of your default local DNS server? If not, what does the IP address correspond to?
+A.Q.)IP address= 18.72.0.3 the DNS query message sent.No this is not the IP address of my default Local DNS server.
+
+r.) Examine the DNS query message. What “Type” of DNS query is it? Does the query message contain any “answers”?
+A.r.)DNS query messages = 3.0.72.18.in-addr.arpa: type PTR, class IN; Answer = 0
+                         www.aiit.or.kr.poly.edu: type A, class IN; Answer = 0
+                         www.aiit.or.kr: type A, class IN; Answer = 0
+
+s.) Examine the DNS response message. How many “answers” are provided? What does each of these answers contain?
+A.s.)DNS response messages = 3.0.72.18.in-addr.arpa: type PTR, class IN, BITSY.MIT.EDU
+                            www.aiit.or.kr: type A, class IN, addr 218.36.94.200
+"2" answers are provided
+
+t.) Provide a screenshot.
+A.t.)NOT to attempt
+
